@@ -17,7 +17,7 @@ const postCSSPlugins = [
 class RunAfterCompile {
   apply(compiler) {
     compiler.hooks.done.tap('Copy images', function() {
-      fse.copySync('./assets/img', './docs/assets/img');
+      fse.copySync('./app/assets/img', './docs/assets/img');
     });
   }
 }
@@ -40,19 +40,19 @@ let cssConfig = {
 // to manage ourself our bg-img on a css file
 
 let pages = fse
-  .readdirSync('./')
+  .readdirSync('./app')
   .filter(function(file) {
     return file.endsWith('.html');
   })
   .map(function(page) {
     return new HtmlWebpackPlugin({
       filename: page,
-      template: `./${page}`
+      template: `./app/${page}`
     });
   });
 
 let config = {
-  entry: './assets/scripts/App.js',
+  entry: './app/assets/scripts/App.js',
   plugins: pages,
   module: {
     rules: [cssConfig]
@@ -64,13 +64,13 @@ if (currentTask == 'dev') {
   cssConfig.use.unshift('style-loader');
   config.output = {
     filename: 'bundled.js',
-    path: path.resolve(__dirname, './')
+    path: path.resolve(__dirname, 'app')
   };
   config.devServer = {
     before: function(app, server) {
-      server._watch('./**/*.html');
+      server._watch('./app/**/*.html');
     },
-    contentBase: path.join(__dirname, './'),
+    contentBase: path.join(__dirname, 'app'),
     hot: true,
     port: 3000,
     host: '0.0.0.0'
