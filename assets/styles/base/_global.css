@@ -1,0 +1,35 @@
+/*  =Reset  & Basics settings */
+
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  scroll-behavior: smooth;
+  /*  This set the font size of the site for 1rem  */
+  font-size: 62.5%;
+}
+
+body {  
+  box-sizing: border-box; 
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
