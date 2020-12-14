@@ -1,0 +1,365 @@
+/* =========================== */
+/*    LIGHT THEME COLORS      */
+/*       &  FONT SIZE        */
+/* ======================== */
+:root {
+  --mainOrange: #F9930E;
+  --mainSemiDarkOrange: #563000;
+  --mainSemiDarkBlue: rgb(9, 5, 60);
+  --mainDarkBlue: rgb(3, 1, 28);
+  --mainLightGray: rgb(246, 246, 255);
+  --mainTextColor: #F7F7F7;
+
+  --textFontSize: 1.6rem;
+  --linkFontSize: 1.4rem;
+}
+
+
+/* ========================== */
+/*     BASICS SETTINGS       */
+/* ======================== */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: var(--textFontSize);
+  color: var(--mainSemiDarkBlue);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .85), rgba(120, 120, 120, .5), rgba(255, 255, 255, .05)), url(../img/bg-admin.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+
+/*  =Font-size  */
+.text-size {
+  font-size: var(--textFontSize);
+}
+/*  =Color  */
+.text-in-dark {
+  color: var(--mainDarkBlue);
+}
+
+
+/*  =Box-Shadow   */
+.box-shadow {
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, .3);
+}
+
+/*   =Badge    */
+.badge-blue {
+  background-color: var(--mainSemiDarkBlue);
+  color: var(--mainTextColor);
+  font-weight: 300;
+}
+
+
+
+/* ========================== */
+/*         LINKS             */
+/* ======================== */
+.link {
+  font-size: var(--linkFontSize);
+  transition: all .2s;
+}
+
+.link:hover {
+  color: var(--mainOrange);
+}
+
+.link--light {
+  color: var(--mainLightGray);
+}
+
+.link--orange {
+  color: var(--mainSemiDarkOrange);
+}
+
+.link--dark {
+  color: var(--mainDarkBlue);
+}
+
+/* ========================== */
+/*    BACKGROUND COLOR       */
+/* ======================== */
+.bg--light {
+  background-color: rgb(255, 255, 255);
+}
+
+/* ========================== */
+/*         BUTTON            */
+/* =========================*/
+.button {
+  display: inline-block;
+  padding: .5rem 1.4rem;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: all .2s;
+}
+
+
+.button--thin {
+  padding: .4rem 1.4rem;
+}
+
+.button--orange {
+  background-color: var(--mainOrange);
+  color: var(--mainTextColor);
+}
+
+.button--orange:hover {
+  color: var(--mainDarkBlue);
+}
+
+
+/* ========================== */
+/*        HEADINGS           */
+/* ======================== */
+.heading-primary {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--mainTextColor);
+}
+
+@media screen and (min-width: 466px) {
+  .heading-primary {
+    font-size: 2.7rem;
+    letter-spacing: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .heading-primary {
+    font-size: 3.3rem;
+  }
+}
+
+.heading-secondary {
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 4.5rem;
+  color: var(--mainDarkBlue);
+}
+
+
+/* ========================== */
+/*         HEADER            */
+/* =========================*/
+/*  =Navigation Components */
+.navbar-flexColOnLg {
+  flex-direction: column;
+  position: relative;
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar-flexColOnLg {
+    flex-direction: row;
+  }
+}
+
+/*   =Navbar-logo  */
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  font-family: 'Montserrat', "Roboto", sans-serif;
+  background-color: transparent;
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar-logo {
+    padding: 15px 0 15px 15px;
+  }
+}
+
+.navbar-logo svg {
+  width: 180px;
+  height: auto;
+}
+
+@media screen and (min-width: 466px) {
+  .navbar-logo svg {
+    width: 240px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-logo svg {
+    width: 100%;
+  }
+}
+
+/*  =Nav link  */
+.nav-link {
+  padding: 0 1rem;
+  height: 2.8rem;
+}
+
+/*  =Dropdown menu  */
+.dropdown:hover  .dropdown-item,
+.dropdown:hover .dropdown-menu {
+  display: block;
+  
+}
+
+.dropdown-item {
+  font-size: 1.3rem;
+  padding: 0.5rem;
+}
+
+
+/*  =Navbar Collapse */
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-collapse ul {
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+/*  =Navbar--login  */
+.navbar-collapse ul:last-of-type {
+  margin-left: 1.5rem;
+  flex-direction: row-reverse;
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar-collapse ul:last-of-type {
+    margin-left: 3rem;
+    flex-direction: row;
+  }
+}
+
+.navbar-collapse ul:last-of-type li:first-of-type {
+  height: 100%;
+}
+
+/*  =Navbar-toggler  */
+.navbar-toggler {
+  position: absolute;
+  top: 20px;
+  right: 7px;
+}
+
+
+@media screen and (min-width: 466px) {
+  .navbar-toggler {
+    top: 30px;
+    right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-toggler {
+    top: 35%;
+    right: 40px;
+  }
+}
+
+.toggle-btn {
+  padding: 0;
+}
+
+.toggle-btn:active,
+.toggle-btn:focus {
+  border: 0;
+  outline: none;
+}
+
+
+
+
+/* ========================== */
+/*          CARDS            */
+/* ======================== */
+main .row div .card,
+main .row div .card .card-header,
+main .row div .card .card-header:first-child {
+  border-bottom: none;
+  border-radius: 0;
+  border: none;
+}
+
+main .row div .card .card-header {
+  padding: 0;
+}
+
+
+/* ========================== */
+/*          FOOTER           */
+/* ======================== */
+footer a svg {
+  width: 35px;
+  height: 35px;
+}
+
+footer > a > p {
+  font-size: 1rem;
+}
+
+footer > p {
+  font-size: 1.2rem;
+}
+
+/* ========================== */
+/*         MODAL             */
+/* =========================*/
+
+.mod {
+  position: relative;
+  max-width: 440px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.mod-pos {
+  max-width: 300px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media screen and (min-width: 576px) {
+  .mod-pos {
+    max-width: 450px;
+  }  
+}
+
+
+
+
+
+
