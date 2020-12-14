@@ -1,0 +1,78 @@
+/*  =Service Item  */
+.service-item {
+  position: relative;
+  width: 75%;
+  min-height: 14.7rem;
+  margin: 0 auto;
+
+
+  @mixin atSmall {
+    height: 28rem;
+  }
+
+
+  @mixin atMedium {
+    height: 32rem;
+    
+    &:first-of-type {
+      margin-bottom: 3rem;
+    }
+  }
+
+  @mixin atLarge {
+    padding-left: 9.4rem;
+  
+    @mixin flexColumn;
+  }
+
+  
+
+  &__icon {
+    display: block;
+    margin: 0 auto;
+    height: 6.4rem;
+    width: 6.4rem;
+
+    @mixin atLarge {
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+  }
+
+  &__title {
+    margin: .5rem auto;
+    font-size: 2.6rem;
+    font-weight: 400;
+    text-align: center;
+
+    @mixin atLarge {
+      margin: .5rem auto .5rem 0;
+      text-align: left;
+      font-size: 3rem;
+    }
+  }
+
+  &__sub-title {
+    height: 5rem;
+    text-align: center;
+    
+    @mixin atLarge {
+      text-align: left;
+    }
+  }
+  p {    
+    width: 100%;
+    margin: 0 0 3.5rem;        
+    text-align: center;
+
+    @mixin atMedium {
+      margin: 0;
+    }
+    
+    @mixin atLarge {
+      width: 100%;
+      text-align: left;
+    }
+  }
+}

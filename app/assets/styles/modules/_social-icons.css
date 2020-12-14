@@ -1,0 +1,32 @@
+.social-icons {
+  margin-top: .5rem;
+  text-align: center;
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    
+    & svg {
+      display: block;
+      position: absolute;
+      width: 2rem;
+      height: 2rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      fill: $mainTextColor;
+      transition: fill .3s;
+
+      &:hover {
+        fill: $mainOrange;
+      }
+    }
+    &--dark {
+      & svg {
+        fill: $mainSemiDarkOrange;
+      }
+    }
+  }
+}

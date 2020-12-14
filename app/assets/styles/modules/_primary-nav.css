@@ -1,0 +1,77 @@
+.primary-nav {
+  padding-top: 1rem;
+
+  @mixin atMedium {
+    padding-top: 0;
+  }
+
+  ul {
+    @mixin atMedium {
+      @mixin flexEnd;
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin-top: .5rem;
+    padding-right: 0;
+    
+    @mixin atMedium {
+      display: block;
+      float: left;
+      margin-top: 0;
+    }
+
+    &:not(:last-child) {
+      
+      @mixin atMedium {
+        padding-right: 1.6rem;
+      }
+      
+      @mixin atLarge {
+        padding-right: 2.2rem;
+      }
+    }
+
+    &:last-child {
+      @mixin atMedium {
+        padding-right: 2rem;
+      }
+      @mixin atLarge {
+        padding-right: 2.8rem;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    padding: .5rem .8rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: $mainTextColor;
+    opacity: 1;
+    transition: all .4s;
+
+    @mixin atMedium {
+      display: inline-block;
+      padding: 0;
+      margin: auto;
+      font-size: 1.6rem;
+
+      &:hover {
+        opacity: .8;
+      }
+
+      &.is-current-link {
+        font-weight: 400;
+        color: $mainOrange;
+      }
+    }
+
+    @mixin atLarge {
+      display: block;
+      width: auto;
+    }
+  }
+}

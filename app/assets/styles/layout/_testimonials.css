@@ -1,0 +1,79 @@
+.testimonial {
+  background: url('assets/img/testimonials-bg.jpg') top center no-repeat;
+  background-size: cover;
+}
+
+
+
+.card {
+  width: 80%;
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: 2px;
+  margin: 8rem auto 3rem;
+  padding: 0 1.4rem 1rem 1.4rem;
+
+
+  @mixin atMedium {
+    margin: 2rem auto 3rem;
+  }
+
+  @mixin atLarge {  
+    width: 100%;
+    padding: 0 2rem 1rem 2rem;
+  }
+
+
+  &__photo {
+    position: relative;
+    top: -8rem;
+    left: 0;
+    margin: 0 auto -8rem auto;
+    width: 16rem;
+    height: 16rem;
+    overflow: hidden;
+    border-radius: 8rem;
+    border: .4rem solid rgba(255, 255, 255, .8);
+
+    @mixin atMedium {
+      top: -3rem;
+      left: -27rem;
+      width: 12rem;
+      height: 12rem;
+    }
+
+    @mixin atLarge {
+      top: -8rem;
+      left: 0;
+      width: 16rem;
+      height: 16rem;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: $mainSemiDarkBlue;
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin: .4rem 0;
+    color: $mainSemiDarkOrange;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5rem;
+
+    @mixin atSmall {
+      margin: .4rem 0 1.6rem 0;
+    }
+  }
+  
+  & p {
+    width: 100%;
+    margin: 0;  
+    padding-bottom: 1.5rem;
+  }
+}
+  
+  

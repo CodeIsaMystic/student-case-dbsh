@@ -1,0 +1,192 @@
+
+.contact__form {
+  width: 100%;
+  padding: 2.5rem 0;
+  margin: 0 auto;
+
+  @mixin atSmall {    
+    padding: 4.5rem 2rem 0;
+  }
+
+  @mixin atMedium {
+    padding: 7rem 2rem 0;
+  }
+}
+
+.form {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  &__group {
+    width: 100%;
+    margin: 0 auto;
+
+    @mixin atSmall {
+      width: 65%;
+    }
+  }
+
+
+  /*   form__text  => textarea  */
+  &__input,
+  &__text {
+    display: block;
+    width: 90%;
+    padding: .8rem 1rem;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    font-family: inherit;
+    color: inherit;
+    border-radius: 2px;
+    background-color: rgba($mainTextColor, .5);
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: all .3s;
+
+    @mixin atSmall {
+      width: 100%;
+    }
+
+    @mixin atMedium {
+      padding: 1.3rem 2rem;
+      font-size: 1.5rem;
+    }
+
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+      border-bottom: 3px solid $mainSemiDarkOrange;
+    }
+
+    /*  =When focused & invalid text  */
+    &:focus:invalid {
+      outline: none;
+      border: none;
+      border-bottom: 3px solid $mainOrange;
+    }
+
+    /*   =Become darker when typing (chrome & safari) */
+    &::-webkit-input-placeholder {
+      color: $mainSemiDarkBlue;
+    } 
+
+    /*   =Trying to custom textarea placeholder
+    &::-webkit-input-placeholder,
+    &:-moz-placeholder, 
+    &::-moz-placeholder,
+    &:-ms-input-placeholder,
+    &::placeholder {
+      opacity: 1;
+      color: $mainSemiDarkBlue;
+    } */
+  }
+
+  &__label {
+    display: block;
+    margin-left: 3rem;
+    margin-top: .3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    transition: all .3s;
+  }
+
+  /*  =Make the label disappear  */
+  &__input:placeholder-shown + &__label
+  {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+  /*  =Trying to custom textarea placeholder-shown
+  
+  &__text::-webkit-input-placeholder-shown + &__label,
+  &__text:-moz-placeholder-shown + &__label, 
+  &__text::-moz-placeholder-shown + &__label,
+  &__text:-ms-input-placeholder-shown + &__label,
+  &__text::placeholder-shown + &__label
+  
+
+  &__text:placeholder-shown + &__label
+  */ 
+
+
+
+  &__checkboxes {
+    margin: 4rem auto 0;
+  }
+
+  /*  =Build the checkbox btn  */
+  &__checkbox-group {
+    display: inline-block;
+    margin: 0 auto .8rem;
+
+    @mixin atMedium {
+      margin: 0 auto 2rem;
+    }
+    
+    &:not(:last-child) {
+      padding-right: 2rem;
+    } 
+  }
+
+  &__checkbox-input {
+    display: none;
+  }
+
+  &__checkbox-label {
+    position: relative;
+    padding-left: 3rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    @mixin atMedium {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__checkbox-button {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1.7rem;
+    width: 1.7rem;
+    border: 2px solid $mainSemiDarkOrange;
+
+
+
+    &:after {
+      content: "\2713\0020";
+      position: absolute;
+      top: .735rem; left: .65rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: $mainSemiDarkOrange;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: all .2s;
+    }
+  }
+
+  &__checkbox-input:checked ~ &__checkbox-label &__checkbox-button:after {
+    opacity: 1;
+  }
+}
+
+
+  /* =Form button */
+  .form-btn {
+    display: block;
+    width: 60%;
+    margin: 4rem auto 0;
+    cursor: pointer;    
+    border: none;
+    
+    @mixin atSmall {    
+      width: 30%;
+    }
+  }
